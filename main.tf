@@ -1,7 +1,13 @@
+terraform {
+  backend "s3" {
+    bucket         = "s3-bucket-robotdreams-terraform-state"
+    key            = "terraform.tfstate"
+    region         = "eu-central-1"
+  }
+}
+
 provider "aws" {
   region = "eu-central-1"
-  access_key = var.access_key
-  secret_key = var.secret_key
 }
 
 # EC2 instance
